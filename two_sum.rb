@@ -21,6 +21,21 @@ def okay_two_sum?(array, target_sum)
   false
 end
 
+# O(n)
+def pair_sum?(array, target_sum)
+  hash = Hash.new
+  array.each do |el|
+    hash[el] = target_sum - el
+  end
+
+  hash.values.each do |el|
+    return true if hash.has_key?(el)
+  end
+
+  false
+end
+
+
 
 
 
